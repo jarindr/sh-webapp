@@ -1,0 +1,136 @@
+<div class="tab-room">
+    <% if( id == "room0"){ %>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href='#<%- id %>' role="tab" data-toggle="tab" class="sub-nav">
+                <span class="tab-header"></span>
+            </a>
+        </li>
+    </ul>
+    <% }else{ %>
+    <ul class="nav nav-tabs" role="tablist">
+        <li>
+            <a href='#<%- id %>' role="tab" data-toggle="tab" class="sub-nav">
+                <span class="tab-header"></span>
+                <% include close_button %>
+            </a>
+        </li>
+    </ul>
+    <% } %>
+    <div class="tab-content">
+        <% if( id == "room0"){ %>
+        <div role="tabpanel" class="tab-pane fade in active" id='<%- id %>'>
+            <% }else{ %>
+            <div role="tabpanel" class="tab-pane fade" id='<%- id %>'>
+                <% } %>
+                <h2 class="tab-header"></h2>
+
+                <form class="form-horizontal" action="confirm_create_queue" method="post">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Room :</label>
+
+                        <div class="col-sm-5">
+                            <select class="form-control room-selector" name="room-selector">
+                                <% if(assignment == "Onscreen room"){ %>
+                                <option value="ro01">Onscreen room</option>
+                                <% }else if(assignment == "Production"){ %>
+                                <option value="rs01">Studio room S</option>
+                                <option value="rs02">Studio room M</option>
+                                <option value="rs03">Studio room L</option>
+                                <option value="rs04">Studio room XL</option>
+                                <option value="rs05">Studio room G</option>
+                                <option value="ro01">Onscreen room</option>
+                                <% }else if (assignment == "Equipment rental" ){ %>
+                                <option value="0">Date and equipment</option>
+                                <% }else{ %>
+                                <option value="rs01">Studio room S</option>
+                                <option value="rs02">Studio room M</option>
+                                <option value="rs03">Studio room L</option>
+                                <option value="rs04">Studio room XL</option>
+                                <option value="rs05">Studio room G</option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                            <div style="color:red; display: inline;">*</div>
+                            Shooting date :</label>
+
+                        <div class="col-sm-5">
+                            <div class="datepicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Photographer :</label>
+
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control Photographer_form" id="Photographer_form"
+                                   name="Photographer_form"
+                                   placeholder="Client name...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Status :</label>
+
+                        <div class="col-sm-5">
+                            <select class="form-control" id="status_selector" name="status_selector">
+                                <option value="Tentative">Tentative</option>
+                                <option value="Confirm">Confirm</option>
+                                <option value="Cancel">Cancel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Time :</label>
+
+                        <div class="col-sm-5">
+                            <select class="form-control time_form" name="time_form" id="time_form"
+                                    placeholder="Client name...">
+                                <option value="00:00">00:00</option>
+                                <option value="01:00">01:00</option>
+                                <option value="02:00">02:00</option>
+                                <option value="03:00">03:00</option>
+                                <option value="04:00">04:00</option>
+                                <option value="05:00">05:00</option>
+                                <option value="06:00">06:00</option>
+                                <option value="07:00">07:00</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                                <option value="20:00">20:00</option>
+                                <option value="21:00">21:00</option>
+                                <option value="22:00">22:00</option>
+                                <option value="23:00">23:00</option>
+                                <option value="24:00">24:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="assistant-group-form">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Assistant :</label>
+
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control assistant_form first-assistant" id="assistant_form"
+                                       name="assistant_form" placeholder="Assistant name ...">
+                            </div>
+                            <div class="col-sm-1">
+                                <button type="button" class="btn btn-default add_assistant" id="add_assistant">+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

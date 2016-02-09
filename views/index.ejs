@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>shootdee system</title>
+        <meta charset="utf-8">
+        <link href="/stylesheets/style.css" rel='stylesheet' type='text/css'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar() {
+        window.scrollTo(0, 1);
+        } </script>
+        <!--webfonts-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,300,600,700' rel='stylesheet'
+            type='text/css'>
+            <!--//webfonts-->
+        </head>
+        <body>
+            <!-----start-main---->
+            <div class="main">
+                <div class="login-form">
+                    <a href="loggedIn"><h1>Authorization </h1></a>
+                    <div class="head">
+                        <img src="/images/user.png" alt=""/>
+                    </div>
+                    <form method="POST" action="login_auth">
+                        <input style="display:none;" type="text" name="somefakename"/>
+                        <input style="display:none;" type="password" name="anotherfakename"/>
+                        username
+                        <input type="text" name="username" autocomplete="off" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = '';
+                        }">
+                        password
+                        <input type="password" name="password" autocomplete="off" value="" onfocus="this.value = '';" onblur="if (this.value == '') {
+                        this.value = '';
+                        }">
+                        <div class="submit">
+                            <input type="submit" onclick="myFunction()" value="LOGIN">
+                        </div>
+                    </form>
+                </div>
+                <!--//End-login-form-->
+                <!-----start-copyright---->
+                <!-----//end-copyright---->
+            </div>
+            <!-----//end-main---->
+        </body>
+    </html>

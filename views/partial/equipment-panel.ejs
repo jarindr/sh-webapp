@@ -1,0 +1,68 @@
+<div class="tab-room">
+
+    <ul class="nav nav-tabs" role="tablist">
+        <% if( id == "room0"){ %>
+        <li class="active">
+            <% }else{ %>
+        <li>
+            <% } %>
+            <a href='#<%- id %>eq' role="tab" data-toggle="tab" class="sub-nav">
+                <span class="tab-header"></span>
+            </a>
+
+        </li>
+    </ul>
+    <div class="tab-content">
+        <% if( id == "room0"){ %>
+        <div role='tabpanel' class='tab-pane fade in active tab-e' id='<%- id %>eq'>
+            <% }else{ %>
+            <div role='tabpanel' class='tab-pane fade tab-e' id='<%- id %>eq'>
+                <% } %>
+                <h2 class="tab-header"> val </h2>
+                <% include default-equipment-selector %>
+                <% var nType = 0; %>
+                <% for(var i = 0;i < 3;i++){ %>
+                <div class="col-sm-4">
+                    <div class='panel-group' role='tablist'>
+                        <% for(var j = 0;j < 3;j++){ %>
+                        <div class='panel panel-default' style='margin-bottom: 5%;'>
+					<span class='glyphicon glyphicon-align-justify pull-right bron'
+                          style='font-size:20px; margin:7px 7px 0 0; color:#696969; cursor:pointer;' aria-hidden='true'>
+					</span>
+
+                            <div class='panel-heading tab-clicker' role='tab' id='heading'>
+                                <h4 class='panel-title'>
+                                    <a role='button' data-toggle='collapse' data-parent='.panel-group' href='#<%- id %>'
+                                       aria-expanded='true'
+                                       aria-controls='<% id %>'>
+                                        <%- typeArray[nType] %>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id='<%- id %>' class='panel-collapse collapse' role='tabpanel'>
+                                <ul class='list-group'>
+                                    <% for(var k = 0;k < equipment[nType].length;k++){ %>
+                                    <li class='list-group-item'
+                                        style='color:#979696; background-color:#C0C0C0; display:none;'>
+                                        <span class="val-name"><%- equipment[nType][k] %></span>
+
+                                        <div id='button' class='button_decrease'> +</div>
+                                        <input type='text' class='value_equip' value='0'>
+
+                                        <div id='button' class='button_increase'> -</div>
+                                    </li>
+                                    <% } %>
+                                    <% nType++ %>
+                                    <% if (nType == typeArray.length) { %>
+                                    <% break %>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>

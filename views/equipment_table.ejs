@@ -1,0 +1,32 @@
+<style type="text/css">
+.table-row-color:hover{
+opacity:0.5;
+}
+</style>
+<table class="table table-striped table-bordered table-hover equipment_table">
+    <tr>
+        <td><b>Equipment serial</b></td>
+        <td><b>Equipment type</b></td>
+        <td><b>Description</b></td>
+        <td><b>Count</b></td>
+        <td><b>Notation</b></td>
+    </tr>
+    <% for(var i = 0;i < equip.length;i++){ %>
+    <tr>
+        <td><%= equip[i].EID %></td>
+        <td><%= equip[i].type %></td>
+        <td><%= equip[i].description %></td>
+        <td><%= equip[i].count %></td>
+<td></td>
+    </tr>
+    <% } %>
+</table>
+<script>
+$(".table-data").click(function(event) {
+var QID = $(this).find('#qid').text();
+var url = 'http://localhost:3000/view_edit?QID=' + QID;
+var form = $('<form action="' + url + '" method="post"></form>');
+$('.table').append(form);
+$(form).submit();
+});
+</script>

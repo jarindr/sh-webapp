@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<html>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	</head>
+	<body>
+		<% include partial/nav.ejs %>
+		<div class="container-fluid">
+			<div class="show_week" style="font-size:30px;">
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover queue_data" style="font-size: 15px;">
+				</table>
+			</div>
+			<div class="table_control" style="text-align: center; margin-bottom: 1%;">
+				<button type="button" class="btn btn-default" id="previous">
+				<span class="glyphicon glyphicon-menu-left" > previous</span>
+				</button>
+				<button type="button" class="btn btn-default" id="next">
+				next <span class="glyphicon glyphicon-menu-right"></span>
+				</button>
+			</div>
+		</div>
+		<script src="../javascripts/jquery-1.11.3.min.js"></script>
+		<script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+		<script src="../javascripts/navigation.js"></script>
+		<script src="../javascripts/table_handler.js"></script>
+		<script type="text/javascript">
+		var curr = new Date(); // get current date
+		var getDayTemp;
+		if(curr.getDay()==0){
+			getDayTemp=7;
+		}else{
+			getDayTemp=curr.getDay();
+		}
+		var first = curr.getDate() - getDayTemp + 1; // First day is the day of the month - the day of the week
+		var last = first + 6; // last day is the first day + 6
+		var firstday = new Date(curr.setDate(first)).toDateString();
+		var lastday = new Date(curr.setDate(last)).toDateString();
+		var x=0;
+		var current = 0;
+		var today, todayNumber, previousWeek, week, mondayNumber, monday,sunday,sundayNumber;
+		today = new Date();
+		todayNumber = getDayTemp;
+		previousWeek = 1; //For every week you want to go back the past fill in a lower number.
+		$(".show_week").text(firstday + " - " + lastday);
+		$('#next').click(function() {
+			x+=7;
+			week = previousWeek * x;
+			mondayNumber = 1 - todayNumber + week;
+			sundayNumber=mondayNumber+6;
+			monday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + mondayNumber);
+			sunday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + sundayNumber);
+			monday=monday.toDateString();
+			sunday=sunday.toDateString();
+			$(".show_week").text(monday + " - " + sunday);
+			
+		});
+		$('#previous').click(function() {
+			x-=7;
+			week = previousWeek * x;
+			mondayNumber = 1 - todayNumber + week;
+			sundayNumber=mondayNumber+6;
+			monday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + mondayNumber);
+			sunday = new Date(today.getFullYear(), today.getMonth(), today.getDate() + sundayNumber);
+			monday=monday.toDateString();
+			sunday=sunday.toDateString();
+			$(".show_week").text(monday + " - " + sunday);
+			
+		});
+		</script>
+		
+	</body>
+</html>

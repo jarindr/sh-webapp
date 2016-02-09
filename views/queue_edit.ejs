@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css">
+<link href="../stylesheets/newQueue.css" rel="stylesheet">
+<link href="../stylesheets/viewQueue.css" rel="stylesheet">
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <style>
+        input[disabled]:hover {
+        cursor: default;
+        }
+        </style>
+        <% include partial/nav.ejs %>
+        <div class="container">
+            <% include partial/sub-nav.ejs %>
+            <div class="main-app">
+                <% include partial/main-app.ejs %>
+            </div>
+            <div class='main-app-room' style="display:none;">
+            </div>
+            <div class='main-app-equipment' style="display:none;">
+            </div>
+        </div>
+        <div class="loading-modal">
+            <img src="/images/loaders/ajax-loader.svg">
+            <span>Loading queue please wait..</span>
+        </div>
+        <script src="../javascripts/jquery-1.11.3.min.js"></script>
+        <script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+        <script src="../javascripts/navigation.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="../javascripts/jquery-ui.multidatespicker.js"></script>
+        <script src="../javascripts/main.js"></script>
+        <script src="../javascripts/myRoomTab.js"></script>
+        <script src="../javascripts/queue_edit.js"></script>
+        <script src="../javascripts/update_queue.js"></script>
+    </body>
+</html>

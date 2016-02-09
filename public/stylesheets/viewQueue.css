@@ -1,0 +1,30 @@
+.loading-modal {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.loading-modal img {
+    width:100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left:-50px;
+    margin-top:-50px;
+    position: absolute;
+}
+.loading-modal span{
+    width:100px;
+    left: 50%;
+    top: 50%;
+    margin-left:-50px;
+    margin-top:50px;
+    position: absolute;
+    text-align: center;
+    color:white;
+}

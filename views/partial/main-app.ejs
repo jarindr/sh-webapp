@@ -1,0 +1,71 @@
+<div class="form-group">
+    <div class="col-sm-12" style="margin-bottom:30px; border-bottom:1px solid #B9B9B9;">
+        <h1><b><%= title %></b></h1>
+    </div>
+</div>
+<form class="form-horizontal" action="confirm_create_queue" method="post">
+    <div id="tester"></div>
+    <input style="display:none;" type="text" name="somefakename"/>
+    <input style="display:none;" type="password" name="anotherfakename"/>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">
+            <div style="color:red; display: inline;">*</div>
+            Client :</label>
+
+        <div class="col-sm-5">
+            <% if(typeof client == "undefined"){ %>
+            <input type="text" class="form-control" name='client_form' id="client_form"
+                   placeholder="Client name..." value='' required>
+            <% }else{ %>
+            <input type="text" class="form-control" name='client_form' id="client_form"
+                   placeholder="Client name..." value='<%- client %>' required>
+            <% } %>
+        </div>
+        <label class="col-sm-2 control-label">Quotation number :</label>
+
+        <div class="col-sm-3">
+            <input type="text" name='quotation_number' id="quotation_number" class=" form-control"
+                   placeholder="auto generate quotation no." value='<%= qid %>' readonly>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Job description :</label>
+
+        <div class="col-sm-5">
+            <textarea rows="4" class="form-control" style="width:100%; resize: none;" id="job_description_form"
+            name="job_description_form"><% if(typeof job_description != "undefined"){ %><%- job_description %><% } %></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Assignment :</label>
+
+        <div class="col-sm-5">
+            <select class="form-control" id="assignment_selector" name="assignment_selector">
+                <% if(typeof assignment != "undefined"){ %>
+                <option <%= assignment == "Studio rental" ? "selected" : "" %>>Studio rental</option>
+                <option <%= assignment == "Studio rental + Location" ? "selected" : "" %>>Studio rental + Location
+                </option>
+                <option <%= assignment == "Equipment rental" ? "selected" : "" %>>Equipment rental</option>
+                <option <%= assignment == "Onscreen room" ? "selected" : "" %>>Onscreen room</option>
+                <option <%= assignment == "Production" ? "selected" : "" %>>Production</option>
+                <% }else{ %>
+                <option>Studio rental</option>
+                <option>Studio rental + Location</option>
+                <option>Equipment rental</option>
+                <option>Onscreen room</option>
+                <option>Production</option>
+                <% } %>
+            </select>
+        </div>
+    </div>
+</form>
+<div class="form-group">
+    <div class="col-sm-12">
+        <ul class="pull-right">
+            <li style="display: inline; padding-right: 10px;">
+                <button type="button" id="next_current_room" class="btn btn-default" style="width:100px;">Next</button>
+            </li>
+        </ul>
+    </div>
+</div>

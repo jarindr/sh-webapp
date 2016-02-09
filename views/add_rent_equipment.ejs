@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link href="../stylesheets/newQueue.css" rel="stylesheet">
+<link href="../stylesheets/awesomplete.css" rel="stylesheet">
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <style>
+        input[disabled]:hover {
+        cursor: default;
+        }
+        </style>
+        <% include nav.ejs %>
+        <div class="container">
+            <div class="form-group">
+                <div class="col-sm-12" style="margin-bottom:30px;-webkit-box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);
+                    -moz-box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);
+                box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);"><h1><b>Add new rent equipment</b></h1></div>
+            </div>
+            <form class="form-horizontal" action="confirm_add_rent_equipment" method="post">
+                <div class='form-group' style='margin-top:3%;'>
+                    <label class='col-sm-2 control-label'>Supplier :</label>
+                    <div class='col-sm-5'>
+                        <input type='text' class='form-control' id='supplier_form' name='supplier_form' placeholder='supplier name...' required>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label class='col-sm-2 control-label'>Description :</label>
+                    <div class='col-sm-5'>
+                        <input type='text' class='form-control awesomplete' id='description_form' name='description_form' placeholder='description...'
+                        data-list='<%-data %>' required>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label class='col-sm-2 control-label'>Price :</label>
+                    <div class='col-sm-5'>
+                        <input type='number' class='form-control' id='price_form' name='price_form' placeholder='Price...'>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label class='col-sm-2 control-label'>Quantity :</label>
+                    <div class='col-sm-5'>
+                        <input type='text' class='form-control' id='quantity_form' name='quantity_form'placeholder='quantity...' value='1'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <ul class="pull-right">
+                            <li style="display: inline; padding-right: 10px;">
+                                <button type="submit" id="submit" class="btn btn-default" style="padding:5px 50px 5px 50px;">Add</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="../javascripts/jquery-1.11.3.min.js"></script>
+        <script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+        <script src="../javascripts/navigation.js"></script>
+        <script src="../javascripts/awesomplete.js"></script>
+        <script type="text/javascript">
+        </script>
+    </body>
+</html>

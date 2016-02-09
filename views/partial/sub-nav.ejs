@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="btn-group btn-breadcrumb">
+        <a href="" class="btn btn-default"><i class="glyphicon glyphicon-home"></i></a>
+        <a id="main-sub-nav" class="btn btn-success sub-nav">Booking</a>
+        <a id='room-sub-nav' class="btn btn-default sub-nav">Rooms</a>
+        <% if(typeof assignment != "undefined"){ %>
+        <% if(assignment != "Onscreen room"){ %>
+        <a id="equip-sub-nav" class="btn btn-default sub-nav">Equipment</a>
+        <% } %>
+        <% }else{ %>
+        <a id="equip-sub-nav" class="btn btn-default sub-nav">Equipment</a>
+        <% } %>
+    </div>
+    <% if(page != "newQueue"){ %>
+    <button type="button" class="btn btn-danger pull-right" style="margin:0 20px 0 20px">Close job</button>
+    <% if(page == "queue_view"){ %>
+    <a href='/queue_edit/<%= qid %>'>
+        <button type="button" class="btn btn-primary pull-right">Edit queue</button>
+    </a>
+    <% } %>
+    <% if(page == "queue_edit"){ %>
+    <a href='/queue_view/<%= qid %>'>
+        <button type="button" class="btn btn-primary pull-right">view queue</button>
+    </a>
+    <% } %>
+    <% } %>
+
+</div>

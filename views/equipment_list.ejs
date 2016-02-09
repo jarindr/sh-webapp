@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <style type="text/css">*:focus {
+        outline: 0 !important;
+        }</style>
+        <%include partial/nav.ejs%>
+        <div class="container-fluid">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Catagories :</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" name='sort_equip' id="sort_equip">
+                            <option>Profoto</option>
+                            <option>Broncolor</option>
+                            <option>Accessories</option>
+                            <option>Light stand</option>
+                            <option>Limbo</option>
+                            <option>Camera and related</option>
+                            <option>Other</option>
+                            <option>Misc</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-default" id="count">view as count</button>
+                </div>
+            </form>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover equipment_table">
+                </table>
+            </div>
+        </div>
+        <script src="../javascripts/jquery-1.11.3.min.js"></script>
+        <script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+        <script src="../javascripts/navigation.js"></script>
+        <script src="../javascripts/equipment_table_handler.js"></script>
+    </body>
+</html>

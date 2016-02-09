@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <style>
+        input[disabled]:hover {
+        cursor: default;
+        }
+        </style>
+        <% include nav.ejs %>
+        <div class="container">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-sm-12" style="margin-bottom:30px;-webkit-box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);
+                        -moz-box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);
+                    box-shadow: 0px 1px 0px 0px rgba(173,173,173,1);"><h1><b>Customer Profile</b></h1></div>
+                </div>
+            </div>
+            <form class="form-horizontal" action="queues" method="post">
+                <div id="tester"></div>
+                <input style="display:none;" type="text" name="somefakename"/>
+                <input style="display:none;" type="password" name="anotherfakename"/>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Type :</label>
+                        <div class="checkbox col-sm-1">
+                            <label>
+                                <input type="checkbox"> Personal
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-1">
+                            <label>
+                                <input type="checkbox"> Cooperate
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">FirstName :</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="client-form" placeholder="Client name...">
+                        </div>
+                        <label class="col-sm-2 control-label">LastName :</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="client-form" placeholder="Client name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">
+                        Nickname :</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="client-form" placeholder="Job...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Sex :</label>
+                        <div class="checkbox col-sm-1">
+                            <label>
+                                <input type="checkbox"> Male
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-1">
+                            <label>
+                                <input type="checkbox"> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Address :</label>
+                        <div class="col-sm-5">
+                            <textarea rows="4" style="width:100%; resize: none;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Tel :</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" id="client-form" placeholder="telephone number...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                    Contact Person :</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="client-form" placeholder="Contact...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Tel :</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" id="client-form" placeholder="telephone number...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email :</label>
+                    <div class="col-sm-5">
+                        <input type="email" class="form-control" id="client-form" placeholder="email...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Discount :</label>
+                    <div class="col-sm-5">
+                        <select class="form-control">
+                            <option>none</option>
+                            <option>3%</option>
+                            <option>5%</option>
+                            <option>10%</option>
+                            <option>15%</option>
+                            <option>others</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="detail-form"></div>
+                <div class="form-group">
+                    <div class="col-sm-7">
+                        <button type="submit" class="btn btn-default pull-right">Create Customer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="../javascripts/jquery-1.11.3.min.js"></script>
+        <script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+        <script src="../javascripts/navigation.js"></script>
+    </body>
+</html>

@@ -17,6 +17,7 @@ router.get('/main-app-room', function(req, res, next) {
         assignment: req.query.assignment
     });
 })
+
 router.get('/assistant_form', function(req, res, next) {
     res.render('assistant_form');
 })
@@ -590,8 +591,8 @@ router.get('/equipment_table', function(req, res, next) {
     console.log("equipment_list router connected");
 
     var catagories = req.query.catagories; // the catagories the selected
-    var count = req.query.count; // boolean value that show count or not 
-    if (count == 'false') { // if count == false means that we show the unique type. 
+    var count = req.query.count; // boolean value that show count or not
+    if (count == 'false') { // if count == false means that we show the unique type.
         connection.query('SELECT * FROM equipment WHERE type=' + '"' + catagories + '"', function(err, rows, fields) {
             if (err) {
                 console.log('cannot query the statement');
@@ -795,7 +796,7 @@ function getWeeks(sort_type) {
     var arrayWeek = [];
     var today, todayNumber, previousWeek, week, mondayNumber, monday, sunday, sundayNumber;
     var x = 0;
-    previousWeek = 1; //For every week you want to go back the past fill in a lower number. 
+    previousWeek = 1; //For every week you want to go back the past fill in a lower number.
     today = new Date();
     todayNumber = today.getDay();
     var curr = new Date(); // get current date

@@ -4,7 +4,7 @@ function createConnection() {
     var connection = mysql.createPool({
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'jarindr',
         database: 'shootdee',
     });
     return connection;

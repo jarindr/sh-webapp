@@ -13,17 +13,17 @@ $(document).ready(function () {
                 $(this).removeClass('btn-default').addClass('btn-success');
                 $(".sub-nav").not(this).removeClass('btn-success').addClass('btn-default');
                 if ($(this).text() == "Booking") {
-                    $(".main-app").show('fast');
-                    $(".main-app-equipment").hide('fast');
-                    $(".main-app-room").hide('fast');
+                    $(".main-app").show();
+                    $(".main-app-equipment").hide();
+                    $(".main-app-room").hide();
                 } else if ($(this).text() == "Rooms" || $(this).text() == "Dates and other") {
-                    $(".main-app").hide('fast');
-                    $(".main-app-equipment").hide('fast');
-                    $(".main-app-room").show('fast');
+                    $(".main-app").hide();
+                    $(".main-app-equipment").hide();
+                    $(".main-app-room").show();
                 } else if ($(this).text() == "Equipment") {
-                    $(".main-app").hide('fast');
-                    $(".main-app-equipment").show('fast');
-                    $(".main-app-room").hide('show');
+                    $(".main-app").hide();
+                    $(".main-app-equipment").show();
+                    $(".main-app-room").hide();
                 }
             });
         }
@@ -59,7 +59,7 @@ $(document).ready(function () {
     }
 
     $(document).on("click", "#next_current_room", function (event) {
-        $(".main-app").hide(); // hide the main-app after click 
+        $(".main-app").hide(); // hide the main-app after click
         $(".main-app-room").show();
         $(".main-app-equipment").hide();
         if ($('#assignment_selector').val() == "Equipment rental") {
@@ -70,7 +70,7 @@ $(document).ready(function () {
     });
 
     $(document).on("click", "#next_current_equipment", function (event) {
-        $(".main-app").hide(); // hide the main-app after click 
+        $(".main-app").hide(); // hide the main-app after click
         $(".main-app-room").hide();
         $(".main-app-equipment").show();
         setActiveSubNav("Equipment");

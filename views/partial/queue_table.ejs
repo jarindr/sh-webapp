@@ -23,15 +23,8 @@
   <script>
   $(".table-data").click(function (event) {
     var QID = $(this).find('#qid').text();
-    $.post('http://localhost:3000/dump_qid', {QID:QID}, function(data, textStatus, xhr) {
-      if (data) {
-        window.location = "http://localhost:3000/queue_view/"+QID;
-
-      } else {
-        window.location = "http://localhost:3000/error";
-      }
-    });
-  });
+    window.location = "http://localhost:3000/queue_view/" + QID;
+  })
   $(".table-loop").find("tr").each(function (index, el) {
     var day = $(this).find("#date").text().substring(0, 3);
     if (day == "Mon") {
@@ -65,11 +58,12 @@
     if (status == "Tentative") {
       $(this).find('#status').css('color', 'orange');
     }
-  });
+  })
+  
   $(".table-data").hover(function () {
     $(this).css('-webkit-filter', 'brightness(90%');
   }, function () {
     $(this).css('-webkit-filter', 'brightness(100%');
-  });
+  })
 
   </script>

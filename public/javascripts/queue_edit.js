@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	$.post('/queue_data', function(queue, textStatus, xhr) {
+	var QID = window.location.pathname.split('/').pop()
+	$.post('/queue_data/' + QID, function(queue, textStatus, xhr) {
 		function loopAddRoom(arr, starter, callback) {
 			myRoomTab.addTab(function() {
 				// set x to next item

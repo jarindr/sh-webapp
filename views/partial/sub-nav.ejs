@@ -4,7 +4,9 @@
         <a id="main-sub-nav" class="btn btn-success sub-nav">Booking</a>
         <a id='room-sub-nav' class="btn btn-default sub-nav">Rooms</a>
         <% if(typeof assignment != "undefined"){ %>
-        <% if(assignment != "Onscreen room"){ %>
+        <% if(assignment == "Onscreen room"){ %>
+        <a id="equip-sub-nav" class="btn btn-default sub-nav" style="display:none;">Equipment</a>
+        <% }else{ %>
         <a id="equip-sub-nav" class="btn btn-default sub-nav">Equipment</a>
         <% } %>
         <% }else{ %>
@@ -26,5 +28,4 @@
     </a>
     <% } %>
     <% } %>
-
 </div>

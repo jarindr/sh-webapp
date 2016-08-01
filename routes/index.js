@@ -437,7 +437,6 @@ router.get('/queue_view/:QID', function(req, res, next) {
     if (err) {
       console.log(err)
     } else {
-      console.log(row);
       var qid = row[0].QID
       var client = row[0].client
       var job_description = row[0].job_description
